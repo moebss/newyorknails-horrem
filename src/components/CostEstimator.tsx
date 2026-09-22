@@ -7,7 +7,6 @@ interface CostEstimatorProps {
 
 export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
   const [treatment, setTreatment] = useState<'neu' | 'refill' | 'shellac' | 'pedikuere'>('neu');
-  const [material, setMaterial] = useState<'gel' | 'acryl'>('gel');
   const [finish, setFinish] = useState<'uni' | 'babyboomer' | 'french' | 'chrome'>('babyboomer');
   const [nailArtCount, setNailArtCount] = useState<number>(2);
 
@@ -33,58 +32,61 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
   const total = calculateTotal();
 
   const getWhatsAppMessage = () => {
-    const treatText = treatment === 'neu' ? 'Neumodellage' : treatment === 'refill' ? 'Auffüllen' : treatment === 'shellac' ? 'Shellac' : 'Pediküre';
-    const finishText = finish === 'babyboomer' ? 'Babyboomer' : finish === 'french' ? 'French' : finish === 'chrome' ? 'Chrome Glaze' : 'Uni Farbe';
-    return `Hallo Kevin! Ich habe meinen Wunschlook im Style-Rechner kalkuliert:
+    const treatText = treatment === 'neu' ? 'The Manhattan Full Set (Neumodellage)' : treatment === 'refill' ? 'Madison Avenue Refill (Auffüllen)' : treatment === 'shellac' ? 'Tribeca Shellac' : '5th Avenue Pediküre';
+    const finishText = finish === 'babyboomer' ? 'Babyboomer Fade' : finish === 'french' ? 'Classic French' : finish === 'chrome' ? 'Liquid Chrome Glaze' : 'Uni Farblackierung';
+    return `Hallo Kevin! Ich habe meinen Wunschlook im New York Nails Kalkulator zusammengestellt:
 • Behandlung: ${treatText}
-• Stil: ${finishText}
+• Finish: ${finishText}
 • Nail-Art Akzente: ${nailArtCount} Nägel
 • Geschätzter Preis: ca. ${total} €
-Wann wäre der nächste freie Termin für mich?`;
+Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
   };
 
   return (
-    <section id="rechner" className="py-16 sm:py-20 bg-[#faf7f4] border-b border-[#ebdcd2]">
+    <section id="rechner" className="py-20 sm:py-24 bg-[#0e1017] text-slate-100 border-b border-white/10 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#a55f52] uppercase bg-[#f3e7df] border border-[#dfccbf] px-4 py-1.5 rounded-full mb-3 shadow-xs">
-            <Calculator className="w-3.5 h-3.5 text-[#b06758]" />
-            <span>Interaktiver Style-Kalkulator</span>
-          </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-stone-900 tracking-tight mb-4">
-            Was kostet Ihr Wunsch-Look?
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-semibold uppercase tracking-widest mb-4">
+            <Calculator className="w-3.5 h-3.5" />
+            <span>Manhattan Atelier Konfigurator</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Kalkulieren Sie Ihren <span className="text-[#c5a059]">Signature Look</span>
           </h2>
-          <p className="text-stone-600 text-base leading-relaxed">
-            Stellen Sie Ihre Wunschbehandlung zusammen und erhalten Sie eine transparente Sofort-Schätzung vor Ihrem Termin.
+          <p className="text-slate-400 text-base leading-relaxed">
+            Wählen Sie Basis, Veredelung und Nail-Art für eine sofortige transparente Kosteneinschätzung vor Ihrem Besuch.
           </p>
         </div>
 
-        <div className="bg-white border border-[#ebdcd2] rounded-3xl p-6 sm:p-10 shadow-lg">
+        <div className="bg-[#12141c] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           <div className="space-y-8">
             
             {/* 1. Step: Treatment */}
             <div>
-              <label className="font-serif font-bold text-stone-900 text-base block mb-3">1. Wählen Sie Ihre Basis-Behandlung:</label>
+              <label className="font-display font-bold text-white text-base block mb-3">
+                1. Basis-Behandlung wählen:
+              </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { id: 'neu', label: 'Neumodellage', price: 'ab 42 €' },
-                  { id: 'refill', label: 'Auffüllen', price: 'ab 32 €' },
-                  { id: 'shellac', label: 'Shellac Natur', price: 'ab 28 €' },
-                  { id: 'pedikuere', label: 'Pediküre', price: 'ab 35 €' }
+                  { id: 'neu', label: 'The Full Set', sub: 'Neumodellage', price: 'ab 42 €' },
+                  { id: 'refill', label: 'Refill', sub: 'Auffüllen', price: 'ab 32 €' },
+                  { id: 'shellac', label: 'Tribeca Shellac', sub: 'Naturnagel', price: 'ab 28 €' },
+                  { id: 'pedikuere', label: '5th Ave Pediküre', sub: 'Fußbad & Pflege', price: 'ab 35 €' }
                 ].map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => setTreatment(item.id as any)}
-                    className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                    className={`p-4 rounded-xl border text-left transition-all cursor-pointer ${
                       treatment === item.id
-                        ? 'border-[#b06758] bg-[#fdf5f2] ring-2 ring-[#b06758]/20'
-                        : 'border-[#ebdcd2] bg-[#faf7f4] hover:border-stone-400'
+                        ? 'border-[#c5a059] bg-[#c5a059]/15 shadow-md ring-1 ring-[#c5a059]'
+                        : 'border-white/10 bg-[#161924] hover:border-white/30 text-slate-300'
                     }`}
                   >
-                    <span className="font-bold text-xs text-stone-900 block">{item.label}</span>
-                    <span className="text-[11px] text-[#a55f52] font-semibold mt-1 block">{item.price}</span>
+                    <span className="font-bold text-xs text-white block">{item.label}</span>
+                    <span className="text-[11px] text-slate-400 block mt-0.5">{item.sub}</span>
+                    <span className="text-xs text-[#c5a059] font-mono font-bold mt-2 block">{item.price}</span>
                   </button>
                 ))}
               </div>
@@ -92,26 +94,28 @@ Wann wäre der nächste freie Termin für mich?`;
 
             {/* 2. Step: Style / Finish */}
             <div>
-              <label className="font-serif font-bold text-stone-900 text-base block mb-3">2. Welcher Style / Finish soll es sein?</label>
+              <label className="font-display font-bold text-white text-base block mb-3">
+                2. Finish & Trend-Effekt wählen:
+              </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { id: 'uni', label: 'Klassisch Uni', price: '+0 €' },
-                  { id: 'babyboomer', label: 'Babyboomer', price: '+6 €' },
-                  { id: 'french', label: 'French Classic', price: '+5 €' },
-                  { id: 'chrome', label: 'Glazed Chrome', price: '+8 €' }
+                  { id: 'uni', label: 'High Gloss Uni', price: '+0 €' },
+                  { id: 'babyboomer', label: 'Babyboomer Fade', price: '+6 €' },
+                  { id: 'french', label: 'French Precision', price: '+5 €' },
+                  { id: 'chrome', label: 'Liquid Chrome Glaze', price: '+8 €' }
                 ].map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => setFinish(item.id as any)}
-                    className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                    className={`p-4 rounded-xl border text-left transition-all cursor-pointer ${
                       finish === item.id
-                        ? 'border-[#b06758] bg-[#fdf5f2] ring-2 ring-[#b06758]/20'
-                        : 'border-[#ebdcd2] bg-[#faf7f4] hover:border-stone-400'
+                        ? 'border-[#c5a059] bg-[#c5a059]/15 shadow-md ring-1 ring-[#c5a059]'
+                        : 'border-white/10 bg-[#161924] hover:border-white/30 text-slate-300'
                     }`}
                   >
-                    <span className="font-bold text-xs text-stone-900 block">{item.label}</span>
-                    <span className="text-[11px] text-stone-500 font-medium mt-1 block">{item.price}</span>
+                    <span className="font-bold text-xs text-white block">{item.label}</span>
+                    <span className="text-xs text-[#c5a059] font-mono font-medium mt-1 block">{item.price}</span>
                   </button>
                 ))}
               </div>
@@ -120,8 +124,12 @@ Wann wäre der nächste freie Termin für mich?`;
             {/* 3. Step: Nail Art Count */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="font-serif font-bold text-stone-900 text-base">3. Nail Art / Schmucksteine / Handmalerei:</label>
-                <span className="font-bold text-xs text-[#a55f52]">{nailArtCount} Akzent-Nägel (+{(nailArtCount * 2.5).toFixed(0)} €)</span>
+                <label className="font-display font-bold text-white text-base">
+                  3. Handgemalte Nail-Art / Schmucksteine:
+                </label>
+                <span className="font-mono font-bold text-xs text-[#c5a059] bg-[#c5a059]/10 px-3 py-1 rounded-full border border-[#c5a059]/30">
+                  {nailArtCount} Akzent-Nägel (+{(nailArtCount * 2.5).toFixed(0)} €)
+                </span>
               </div>
               <input
                 type="range"
@@ -130,25 +138,25 @@ Wann wäre der nächste freie Termin für mich?`;
                 step="2"
                 value={nailArtCount}
                 onChange={(e) => setNailArtCount(Number(e.target.value))}
-                className="w-full accent-[#b06758] cursor-pointer"
+                className="w-full accent-[#c5a059] cursor-pointer bg-white/10 h-2 rounded-lg"
               />
-              <div className="flex justify-between text-[11px] text-stone-400 mt-1">
-                <span>Keine Nail Art</span>
-                <span>2 Akzentnägel</span>
+              <div className="flex justify-between text-[11px] text-slate-400 mt-2 font-mono">
+                <span>0 Nägel (Pur)</span>
+                <span>2 Akzente</span>
                 <span>4 Nägel</span>
-                <span>Alle 10 Nägel</span>
+                <span>Full Set (10 Nägel)</span>
               </div>
             </div>
 
           </div>
 
-          {/* Result Card */}
-          <div className="mt-8 pt-6 border-t border-[#ebdcd2] flex flex-col sm:flex-row items-center justify-between gap-6 bg-[#faf7f4] -mx-6 -mb-6 sm:-mx-10 sm:-mb-10 p-6 sm:p-8 rounded-b-3xl">
+          {/* Result Bottom Bar */}
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 bg-[#0e1017] -mx-6 -mb-6 sm:-mx-10 sm:-mb-10 p-6 sm:p-8 rounded-b-3xl">
             <div>
-              <span className="text-xs text-stone-500 font-semibold uppercase tracking-wider block">Geschätzter Gesamtwert:</span>
+              <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Geschätzter Gesamtpreis:</span>
               <div className="flex items-baseline gap-2 mt-1">
-                <span className="font-serif font-bold text-4xl text-stone-900">ca. {total} €</span>
-                <span className="text-xs text-stone-500 font-normal">inkl. Vorbereitung & Versiegelung</span>
+                <span className="font-mono font-extrabold text-4xl text-[#c5a059]">ca. {total} €</span>
+                <span className="text-xs text-slate-400 font-normal">inkl. Cuticle Care & Versiegelung</span>
               </div>
             </div>
 
@@ -157,17 +165,17 @@ Wann wäre der nächste freie Termin für mich?`;
                 href={`https://wa.me/4917680211120?text=${encodeURIComponent(getWhatsAppMessage())}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md transition-all flex items-center justify-center gap-2"
+                className="bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4 text-[#b7e4c7]" />
-                <span>Auswahl per WhatsApp buchen</span>
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span>Konfiguration per WhatsApp an Kevin</span>
               </a>
 
               <button
                 onClick={onOpenContact}
-                className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-bold text-xs uppercase tracking-wider py-3.5 px-5 rounded-full transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-extrabold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <span>Terminanfrage</span>
+                <span>Termin anfragen</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

@@ -5,28 +5,22 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: 'Neumodellage (Gel & Acryl)',
+    service: 'The Manhattan Full Set (Gel & Acryl)',
     date: '',
-    time: 'Vormittags',
+    time: 'Vormittags (09:30 - 12:00)',
     note: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
   const getWhatsAppLink = () => {
-    let msg = `Hallo Kevin! Ich möchte gerne einen Termin im New York Nails Horrem vereinbaren:
+    let msg = `Hallo Kevin! Ich möchte gerne einen Termin im New York Nails Atelier Horrem vereinbaren:
 `;
-    if (formData.name) msg += `• Name: ${formData.name}
-`;
-    if (formData.phone) msg += `• Telefon: ${formData.phone}
-`;
-    msg += `• Behandlung: ${formData.service}
-`;
-    if (formData.date) msg += `• Wunschdatum: ${formData.date}
-`;
-    if (formData.time) msg += `• Uhrzeit: ${formData.time}
-`;
-    if (formData.note) msg += `• Notiz/Design: ${formData.note}
-`;
+    if (formData.name) msg += `• Name: ${formData.name}\n`;
+    if (formData.phone) msg += `• Telefon: ${formData.phone}\n`;
+    msg += `• Behandlung: ${formData.service}\n`;
+    if (formData.date) msg += `• Wunschdatum: ${formData.date}\n`;
+    if (formData.time) msg += `• Bevorzugte Zeit: ${formData.time}\n`;
+    if (formData.note) msg += `• Design / Notiz: ${formData.note}\n`;
     return `https://wa.me/4917680211120?text=${encodeURIComponent(msg)}`;
   };
 
@@ -37,177 +31,177 @@ export default function Contact() {
   };
 
   return (
-    <section id="kontakt" className="py-16 sm:py-20 bg-white border-b border-[#ebdcd2]">
+    <section id="kontakt" className="py-20 sm:py-24 bg-[#0b0c10] text-slate-100 border-b border-white/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Left Contact Info */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#a55f52] uppercase bg-[#f3e7df] border border-[#dfccbf] px-4 py-1.5 rounded-full mb-3 shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#b06758]" />
-                <span>Terminbuchung & Kontakt</span>
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-stone-900 tracking-tight leading-tight">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-semibold uppercase tracking-widest mb-4">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Terminbuchung & VIP Kontakt</span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
                 Ihr nächster <br />
-                <span className="italic font-light text-[#b06758]">Traumtermin</span>
+                <span className="text-[#c5a059]">Wunschtermin</span>
               </h2>
-              <p className="text-stone-600 text-base mt-3 leading-relaxed">
-                Wählen Sie Ihren bevorzugten Weg: Senden Sie uns eine direkte WhatsApp-Nachricht, rufen Sie im Studio an oder nutzen Sie das Schnellformular.
+              <p className="text-slate-400 text-base mt-3 leading-relaxed">
+                Wählen Sie Ihren bevorzugten Kontaktweg: Senden Sie Stylist Kevin eine direkte WhatsApp-Nachricht, rufen Sie im Atelier an oder nutzen Sie das Schnellformular.
               </p>
             </div>
 
-            <div className="space-y-3.5">
+            <div className="space-y-4">
               {/* WhatsApp Card */}
               <a
                 href="https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20m%C3%B6chte%20gerne%20einen%20Termin%20im%20New%20York%20Nails%20Horrem%20vereinbaren."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d8f3dc] border border-[#95d5b2] p-5 rounded-2xl flex items-center gap-4 hover:bg-[#b7e4c7] transition-all block group"
+                className="bg-emerald-950/60 border border-emerald-500/30 p-5 rounded-2xl flex items-center gap-4 hover:bg-emerald-900/60 transition-all block group shadow-lg"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#2d6a4f] text-white flex items-center justify-center shrink-0 shadow-xs">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500 text-[#0b0c10] flex items-center justify-center shrink-0 shadow-md">
                   <MessageCircle className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="font-serif font-bold text-[#1b4332] text-base block">WhatsApp Sofortkontakt</span>
-                  <span className="text-xs text-[#2d6a4f] font-semibold block mt-0.5">0176 80211120 • Schnellste Antwort</span>
+                  <span className="font-display font-bold text-white text-base block">WhatsApp Direktanfrage an Kevin</span>
+                  <span className="text-xs text-emerald-300 font-medium block mt-0.5">0176 80211120 • Schnellste Terminabstimmung</span>
                 </div>
               </a>
 
               {/* Phone Card */}
               <a
                 href="tel:022739919337"
-                className="bg-[#faf7f4] border border-[#ebdcd2] p-5 rounded-2xl flex items-center gap-4 hover:bg-[#f3e7df] transition-all block group"
+                className="bg-[#141722] border border-white/10 p-5 rounded-2xl flex items-center gap-4 hover:bg-white/5 transition-all block group shadow-lg"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#f3e7df] text-[#b06758] border border-[#dfccbf] flex items-center justify-center shrink-0 shadow-xs">
+                <div className="w-12 h-12 rounded-xl bg-[#c5a059]/10 text-[#c5a059] border border-[#c5a059]/30 flex items-center justify-center shrink-0 shadow-md">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="font-serif font-bold text-stone-900 text-base block">Studio Festnetz</span>
-                  <span className="text-xs text-stone-600 font-semibold block mt-0.5">02273 / 9919337</span>
+                  <span className="font-display font-bold text-white text-base block">Atelier Festnetz</span>
+                  <span className="text-xs text-slate-400 font-medium block mt-0.5">02273 / 9919337 • Direkt im Salon</span>
                 </div>
               </a>
 
               {/* Address Card */}
-              <div className="bg-[#faf7f4] border border-[#ebdcd2] p-5 rounded-2xl flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f3e7df] text-[#b06758] border border-[#dfccbf] flex items-center justify-center shrink-0 shadow-xs">
+              <div className="bg-[#141722] border border-white/10 p-5 rounded-2xl flex items-center gap-4 shadow-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#c5a059]/10 text-[#c5a059] border border-[#c5a059]/30 flex items-center justify-center shrink-0 shadow-md">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="font-serif font-bold text-stone-900 text-base block">Studio-Standort</span>
-                  <span className="text-xs text-stone-600 block mt-0.5">Hauptstraße 177-179, 50169 Kerpen-Horrem</span>
+                  <span className="font-display font-bold text-white text-base block">Atelier-Standort</span>
+                  <span className="text-xs text-slate-400 block mt-0.5">Hauptstraße 177–179, 50169 Kerpen-Horrem</span>
                 </div>
               </div>
 
               {/* Hours Card */}
-              <div className="bg-[#faf7f4] border border-[#ebdcd2] p-5 rounded-2xl flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f3e7df] text-[#b06758] border border-[#dfccbf] flex items-center justify-center shrink-0 shadow-xs">
+              <div className="bg-[#141722] border border-white/10 p-5 rounded-2xl flex items-center gap-4 shadow-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#c5a059]/10 text-[#c5a059] border border-[#c5a059]/30 flex items-center justify-center shrink-0 shadow-md">
                   <Clock className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="font-serif font-bold text-stone-900 text-base block">Öffnungszeiten</span>
-                  <span className="text-xs text-stone-600 block mt-0.5">Mo–Fr 09:30–19:00 Uhr • Sa 09:30–17:00 Uhr</span>
+                  <span className="font-display font-bold text-white text-base block">Öffnungszeiten</span>
+                  <span className="text-xs text-slate-400 block mt-0.5">Mo–Fr 09:30–19:00 Uhr • Sa 09:30–17:00 Uhr</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Booking Form */}
-          <div className="lg:col-span-7 bg-[#faf7f4] border border-[#ebdcd2] p-6 sm:p-10 rounded-3xl shadow-lg">
-            <h3 className="font-serif font-bold text-2xl text-stone-900 mb-2">Termin-Konfigurator</h3>
-            <p className="text-stone-600 text-sm mb-6">Füllen Sie das Formular aus – Ihre Daten werden direkt per WhatsApp an Stylist Kevin übertragen.</p>
+          <div className="lg:col-span-7 bg-[#12141c] border border-white/10 p-7 sm:p-10 rounded-3xl shadow-2xl">
+            <h3 className="font-display font-bold text-2xl text-white mb-2">Termin-Konfigurator</h3>
+            <p className="text-slate-400 text-sm mb-6">Wählen Sie Ihre Wünsche – Ihre Angaben werden direkt in eine vorgefertigte WhatsApp-Nachricht an Kevin übernommen.</p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block mb-1.5">Ihr Name *</label>
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">Ihr Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="z.B. Sarah Müller"
-                    className="w-full bg-white border border-[#ebdcd2] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-[#b06758]"
+                    placeholder="z.B. Jessica Keller"
+                    className="w-full bg-[#181b26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#c5a059]"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block mb-1.5">Telefon / WhatsApp *</label>
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">Telefon / WhatsApp *</label>
                   <input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="z.B. 0176 12345678"
-                    className="w-full bg-white border border-[#ebdcd2] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-[#b06758]"
+                    className="w-full bg-[#181b26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#c5a059]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block mb-1.5">Gewünschte Behandlung</label>
+                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">Gewünschte Behandlung</label>
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full bg-white border border-[#ebdcd2] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-[#b06758]"
+                  className="w-full bg-[#181b26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c5a059]"
                 >
-                  <option value="Neumodellage (Gel & Acryl)">Neumodellage (Gel & Acryl) – ab 42 €</option>
-                  <option value="Auffüllen / Refill">Auffüllen / Refill – ab 32 €</option>
-                  <option value="Babyboomer & French Ombré">Babyboomer & French Ombré – ab 38 €</option>
-                  <option value="Shellac Naturnagel">Shellac Naturnagel – ab 28 €</option>
-                  <option value="Wellness Pediküre">Wellness Pediküre – ab 35 €</option>
-                  <option value="Klassische Maniküre">Klassische Maniküre – ab 22 €</option>
-                  <option value="Nail Art & Individuelles Design">Nail Art & Individuelles Design – nach Absprache</option>
+                  <option value="The Manhattan Full Set (Neumodellage)">The Manhattan Full Set (Neumodellage) – ab 42 €</option>
+                  <option value="Madison Avenue Refill (Auffüllen)">Madison Avenue Refill (Auffüllen) – ab 32 €</option>
+                  <option value="Upper East Babyboomer Fade">Upper East Babyboomer Fade – ab 38 €</option>
+                  <option value="Tribeca Shellac Naturnagel">Tribeca Shellac Naturnagel – ab 28 €</option>
+                  <option value="5th Avenue Spa Pediküre">5th Avenue Spa Pediküre – ab 35 €</option>
+                  <option value="Clean Manicure Essentials">Clean Manicure Essentials – ab 22 €</option>
+                  <option value="Liquid Chrome & Nail Art">Liquid Chrome & Nail Art – nach Aufwand</option>
                   <option value="Express Nagelreparatur">Express Nagelreparatur – ab 4 €</option>
                 </select>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block mb-1.5">Wunschdatum (optional)</label>
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">Wunschdatum (optional)</label>
                   <input
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full bg-white border border-[#ebdcd2] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-[#b06758]"
+                    className="w-full bg-[#181b26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c5a059]"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block mb-1.5">Bevorzugte Tageszeit</label>
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">Bevorzugte Tageszeit</label>
                   <select
                     value={formData.time}
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    className="w-full bg-white border border-[#ebdcd2] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-[#b06758]"
+                    className="w-full bg-[#181b26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c5a059]"
                   >
                     <option value="Vormittags (09:30 - 12:00)">Vormittags (09:30 - 12:00)</option>
                     <option value="Mittags (12:00 - 15:00)">Mittags (12:00 - 15:00)</option>
                     <option value="Nachmittags (15:00 - 18:00)">Nachmittags (15:00 - 18:00)</option>
-                    <option value="Spätnachmittag / Feierabend">Spätnachmittag / Feierabend</option>
+                    <option value="Feierabend (ab 18:00)">Feierabend (ab 18:00)</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block mb-1.5">Notiz / Farbwunsch (optional)</label>
+                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">Notiz / Farbwunsch (optional)</label>
                 <textarea
                   rows={3}
                   value={formData.note}
                   onChange={(e) => setFormData({ ...formData, note: e.target.value })}
-                  placeholder="Haben Sie ein Foto oder spezielle Wünsche bezüglich Länge, Form oder Glitzer?"
-                  className="w-full bg-white border border-[#ebdcd2] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none focus:border-[#b06758]"
+                  placeholder="Haben Sie ein Foto oder spezielle Wünsche bezüglich Form, C-Kurve oder Chrome-Finish?"
+                  className="w-full bg-[#181b26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#c5a059]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-bold text-sm uppercase tracking-wider py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm uppercase tracking-wider py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer"
               >
-                <MessageCircle className="w-5 h-5 text-[#b7e4c7]" />
-                <span>Termin über WhatsApp an Kevin senden</span>
+                <MessageCircle className="w-5 h-5 text-emerald-100" />
+                <span>Termin per WhatsApp an Kevin senden</span>
               </button>
 
-              <p className="text-[11px] text-stone-400 text-center">
-                Ihre Daten werden vertraulich behandelt und ausschließlich zur Terminabstimmung verwendet. Keine Werbeanrufe.
+              <p className="text-[11px] text-slate-500 text-center">
+                Ihre Daten werden vertraulich behandelt und ausschließlich zur persönlichen Terminvereinbarung verwendet.
               </p>
             </form>
           </div>

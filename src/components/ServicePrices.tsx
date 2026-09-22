@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import { Sparkles, Check, ArrowRight, MessageCircle } from 'lucide-react';
-import imgNeumodellage from '../images/nail_neumodellage.jpg';
-import imgBabyboomer from '../images/nail_babyboomer.jpg';
-import imgPortfolio from '../images/portfolio_nails.jpg';
 
 interface ServicePricesProps {
   onOpenContact: () => void;
@@ -14,130 +11,140 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
   const categories = {
     modellage: [
       {
-        name: "Neumodellage Gel",
+        name: "The Manhattan Full Set (Gel)",
+        subtitle: "Premium Neumodellage mit Schablone / Tips",
         price: "ab 42 €",
         duration: "ca. 60 Min.",
-        desc: "Nagelverlängerung mit Schablone oder Tips. Perfekte Stabilität, Formung und langanhaltender Glanz.",
-        highlights: ["Inkl. Formfeilen & Nagelhautpflege", "Natürlich dünner Aufbau", "Splitterfest für 4+ Wochen"],
+        desc: "Präzise Nagelverlängerung mit optimaler C-Kurven-Architektur für perfekte Statik, splitterfreien Halt und makellosen Glanz.",
+        highlights: ["Inkl. Formfeilen & Russian Nagelhautpflege", "Natürlich schlanker Aufbau", "Splitterfest für 4+ Wochen"],
         popular: true
       },
       {
-        name: "Neumodellage Acryl / Pulver",
+        name: "SoHo Acryl & Dipping System",
+        subtitle: "Maximale Belastbarkeit & Stabilität",
         price: "ab 42 €",
         duration: "ca. 60 Min.",
-        desc: "Extrem widerstandsfähig für stark beanspruchte Hände. Ideal für lange Nagellängen.",
-        highlights: ["Höchste Bruchsicherheit", "Präzise Modellierung", "Versiegelung nach Wahl"]
+        desc: "Extrem bruchsicher für höchste Beanspruchung. Ideal für anspruchsvolle Längen und scharfkantige C-Kurven (Ballerina / Stiletto).",
+        highlights: ["Höchste Stoßfestigkeit", "Exakte C-Kurven-Modellierung", "Versiegelung nach Wahl"]
       },
       {
-        name: "Auffüllen / Refill (Gel / Acryl)",
+        name: "Madison Avenue Refill",
+        subtitle: "Auffüllen Gel / Acryl nach 3-4 Wochen",
         price: "ab 32 €",
-        duration: "ca. 45-50 Min.",
-        desc: "Ausgleich des Herauswuchses nach 3–4 Wochen inklusive Fräser-Pflege und Farbauffrischung.",
-        highlights: ["Altes Material sanft abtragen", "Perfekte C-Kurve erneuern", "Glatte Übergänge"],
+        duration: "ca. 45–50 Min.",
+        desc: "Sanftes Abtragen des Altmaterials, Erneuerung der Statik, Fräser-Cuticle-Care und frisches Farb- oder Gloss-Finish.",
+        highlights: ["Schonende Fräsertechnik", "Glatte Übergänge ohne Absätze", "Erneuerung des Diamant-Glanzes"],
         popular: true
       },
       {
-        name: "Babyboomer & French Ombré",
+        name: "Upper East Babyboomer Fade",
+        subtitle: "Zeitloser Nude-zu-Weiß Farbverlauf",
         price: "ab 38 €",
         duration: "ca. 60 Min.",
-        desc: "Der zeitlose Liebling in Horrem: Sanfter, nahtloser Farbverlauf von zartem Nude-Rosé zu Weiß.",
-        highlights: ["Elegantes Alltags- & Hochzeitsdesign", "Kein harter Ansatz", "Sehr gepflegter Look"]
+        desc: "Der ikonische Liebling: Ein nahtloser, seidiger Übergang von natürlichem Rosé in strahlendes Soft-White. Eleganz pur.",
+        highlights: ["Perfekter Farbverlauf ohne Kanten", "Ultra-natürlicher Rauswuchs", "Beliebt für Business & Hochzeit"]
       }
     ],
     pflege: [
       {
-        name: "Shellac / UV-Lack Naturnagel",
+        name: "Tribeca Shellac / UV-Lack",
+        subtitle: "Naturnagelverstärkung mit Hochglanz",
         price: "ab 28 €",
         duration: "ca. 40 Min.",
-        desc: "Schonende Naturnagelverstärkung mit kratzfestem UV-Color-Lack. Hält bis zu 3 Wochen ohne Absplittern.",
-        highlights: ["Ohne Verlängerung", "Sofort trocken unter LED", "Glanz wie am ersten Tag"],
+        desc: "Schonende Veredelung Ihres Naturnagels mit kratzfestem UV-Color-Lack. Hält bis zu 3 Wochen ohne Absplittern.",
+        highlights: ["Kein Anrauen des Naturnagels nötig", "Sofort trocken unter LED", "Glanz wie am ersten Tag"],
         popular: true
       },
       {
-        name: "Wellness Pediküre mit Fußbad",
+        name: "5th Avenue Spa Pediküre",
+        subtitle: "Wellness-Fußbad, Peeling & Pflege",
         price: "ab 35 €",
         duration: "ca. 50 Min.",
-        desc: "Entspannendes Fußbad, Hornhautentfernung, Nagelhautbehandlung und Formfeilen.",
-        highlights: ["Wohltuende Fußmassage", "Inkl. Pflegecreme", "Optional mit langanhaltendem Farbgel (+10 €)"]
+        desc: "Verwöhnendes Fußbad, sanfte Hornhautentfernung, Nagelhautbehandlung, Formfeilen und entspannende Massage.",
+        highlights: ["Wohltuendes Aroma-Fußbad", "Inkl. Intensiv-Pflegebalsam", "Optional mit Farbgel / Shellac (+10 €)"]
       },
       {
-        name: "Klassische Maniküre",
+        name: "Clean Manicure Essentials",
+        subtitle: "Professionelle Basispflege für Sie & Ihn",
         price: "ab 22 €",
         duration: "ca. 30 Min.",
-        desc: "Professionelle Basispflege für Sie & Ihn. Schneiden, Formen, Nagelhautpflege und Polieren.",
-        highlights: ["Auch für Herren geeignet", "Nährstoffreiches Nagelöl", "Natürlicher Glanz"]
+        desc: "Schneiden, Feilen, Nagelhautbehandlung und Politur für natürlich gepflegte Hände im minimalistischen Clean-Girl Look.",
+        highlights: ["Auch ideal für Herren", "Nährendes Bio-Nagelöl", "Gesunder Naturglanz"]
       }
     ],
     extras: [
       {
-        name: "Individuelle Nail Art & Handmalerei",
+        name: "Liquid Chrome & Glazed Finish",
+        subtitle: "Hailey Bieber & Mirror Chrome Pigmente",
         price: "ab 5 €",
-        duration: "nach Aufwand",
-        desc: "Filigrane Linien, Blumen, Swirls oder geometrische Muster handgemalt von Stylist Kevin.",
-        highlights: ["Eigene Instagram-Ideen willkommen", "Präzise Pinselarbeit", "Einzigartiges Unikat"]
+        duration: "ca. 10 Min.",
+        desc: "Hochglänzende Perlmutt- und Spiegeleffekte, die im Licht irisieren. Auf jede Grundfarbe auftragbar.",
+        highlights: ["Trendsetter-Look aus New York", "Nahtlose Einbettung", "Extremer Glanzeffekt"]
       },
       {
-        name: "Chrome, Glitzer & Steinchen (Swarovski)",
+        name: "Atelier Nail Art & Swirls",
+        subtitle: "Handgemalte Details by Stylist Kevin",
         price: "ab 5 €",
         duration: "nach Aufwand",
-        desc: "Spiegeleffekte (Hailey Bieber Glazed Donut Look), Glitzer-Fading oder funkelnde Kristallsteine.",
-        highlights: ["Hochglanz-Chrome Pigmente", "Sicher versiegelt", "Trendige Akzentnägel"]
+        desc: "Filigrane Linien, minimalistische French-Variationen, Marmor-Effekte oder 3D-Akzente individuell für Sie kreiert.",
+        highlights: ["Eigene Instagram-Vorlagen willkommen", "Präzise Pinselarbeit", "Exklusives Unikat"]
       },
       {
-        name: "Express Reparatur (pro Nagel)",
+        name: "Express Emergency Repair",
+        subtitle: "Soforthilfe pro Nagel",
         price: "ab 4 €",
         duration: "ca. 10 Min.",
-        desc: "Schnelle Soforthilfe bei abgebrochenem oder gespaltenem Nagel.",
-        highlights: ["Spontan ohne lange Wartezeit", "Exakte Anpassung an restliche Nägel"]
+        desc: "Schnelle Rettung bei abgebrochenem oder eingerissenem Nagel ohne lange Wartezeiten.",
+        highlights: ["Spontaner Walk-in möglich", "Exakte Farbanpassung an Restmodellage"]
       }
     ]
   };
 
   return (
-    <section id="preise" className="py-16 sm:py-20 bg-[#faf7f4] border-b border-[#ebdcd2]">
+    <section id="preise" className="py-20 sm:py-24 bg-[#0b0c10] text-slate-100 border-b border-white/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#a55f52] uppercase bg-[#f3e7df] border border-[#dfccbf] px-4 py-1.5 rounded-full mb-3 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#b06758]" />
-            <span>Transparente Menü-Übersicht</span>
-          </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-stone-900 tracking-tight mb-4">
-            Behandlungen & Preise
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-semibold uppercase tracking-widest mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Manhattan Atelier Menu</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Behandlungen & <span className="text-[#c5a059]">Preise</span>
           </h2>
-          <p className="text-stone-600 text-base leading-relaxed">
-            Faire, ehrliche Festpreise ohne versteckte Kosten. Höchste Handwerkskunst und erstklassige Markenprodukte für langanhaltende Schönheit.
+          <p className="text-slate-400 text-base leading-relaxed">
+            Transparente Festpreise ohne versteckte Aufschläge. Höchste Handwerkskunst, erstklassige Premium-Marken und meisterhafte Haltbarkeit.
           </p>
 
           {/* Category Tabs */}
-          <div className="flex items-center justify-center gap-2 mt-8 p-1.5 bg-[#f3e7df] rounded-full max-w-md mx-auto border border-[#dfccbf]">
+          <div className="flex items-center justify-center gap-2 mt-8 p-1.5 bg-[#12141c] rounded-2xl max-w-md mx-auto border border-white/10 shadow-lg">
             <button
               onClick={() => setActiveTab('modellage')}
-              className={`flex-1 py-2 px-4 rounded-full text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'modellage'
-                  ? 'bg-stone-900 text-stone-50 shadow-sm'
-                  : 'text-stone-600 hover:text-stone-900'
+                  ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
               Gel & Acryl
             </button>
             <button
               onClick={() => setActiveTab('pflege')}
-              className={`flex-1 py-2 px-4 rounded-full text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'pflege'
-                  ? 'bg-stone-900 text-stone-50 shadow-sm'
-                  : 'text-stone-600 hover:text-stone-900'
+                  ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
-              Shellac & Pflege
+              Shellac & Spa
             </button>
             <button
               onClick={() => setActiveTab('extras')}
-              className={`flex-1 py-2 px-4 rounded-full text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'extras'
-                  ? 'bg-stone-900 text-stone-50 shadow-sm'
-                  : 'text-stone-600 hover:text-stone-900'
+                  ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
               Nail Art & Extras
@@ -146,52 +153,55 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {categories[activeTab].map((item, idx) => (
             <div
               key={idx}
-              className={`relative bg-white border rounded-2xl p-6 shadow-xs flex flex-col justify-between transition-all hover:shadow-md ${
-                item.popular ? 'border-[#b06758] ring-1 ring-[#b06758]/20' : 'border-[#ebdcd2]'
+              className={`relative bg-[#141722] border rounded-2xl p-7 shadow-xl flex flex-col justify-between transition-all duration-300 hover:border-[#c5a059]/60 hover:bg-[#181d2b] ${
+                item.popular ? 'border-[#c5a059]/40 ring-1 ring-[#c5a059]/20' : 'border-white/10'
               }`}
             >
               {item.popular && (
-                <span className="absolute -top-3 right-6 bg-[#b06758] text-white text-[10px] font-bold tracking-widest uppercase py-1 px-3 rounded-full shadow-xs">
-                  Beliebt
+                <span className="absolute -top-3 right-6 bg-[#c5a059] text-[#0b0c10] text-[10px] font-extrabold tracking-widest uppercase py-1 px-3 rounded-full shadow-md">
+                  Signature Look
                 </span>
               )}
 
               <div>
-                <div className="flex items-baseline justify-between gap-4 mb-2">
-                  <h3 className="font-serif font-bold text-xl text-stone-900 leading-snug">{item.name}</h3>
-                  <span className="font-serif font-bold text-xl text-[#a55f52] shrink-0">{item.price}</span>
+                <div className="flex items-start justify-between gap-4 mb-1">
+                  <div>
+                    <h3 className="font-display font-bold text-xl text-white leading-snug">{item.name}</h3>
+                    <span className="text-xs font-medium text-[#c5a059] block mt-0.5">{item.subtitle}</span>
+                  </div>
+                  <span className="font-mono font-bold text-2xl text-[#c5a059] shrink-0">{item.price}</span>
                 </div>
-                <span className="text-[11px] font-medium text-stone-400 block mb-3">{item.duration}</span>
-                <p className="text-stone-600 text-sm leading-relaxed mb-5">{item.desc}</p>
+                <span className="text-[11px] font-mono text-slate-400 block mb-4">{item.duration}</span>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">{item.desc}</p>
 
-                <ul className="space-y-2 mb-6 border-t border-[#f5ede7] pt-4">
+                <ul className="space-y-2.5 mb-6 border-t border-white/10 pt-4">
                   {item.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-2 text-xs text-stone-700">
-                      <Check className="w-3.5 h-3.5 text-[#2d6a4f] shrink-0" />
+                    <li key={i} className="flex items-center gap-2.5 text-xs text-slate-300">
+                      <Check className="w-4 h-4 text-[#c5a059] shrink-0" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-2 border-t border-[#f5ede7] flex items-center justify-between gap-2">
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                 <a
                   href={`https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20h%C3%A4tte%20Interesse%20an:%20${encodeURIComponent(item.name)}%20(${item.price})`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#1b4332] bg-[#d8f3dc] hover:bg-[#b7e4c7] py-2 px-3 rounded-xl transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-2 text-xs font-bold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-500/30 py-2.5 px-4 rounded-xl transition-colors"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-[#2d6a4f]" />
+                  <MessageCircle className="w-4 h-4 text-emerald-400" />
                   <span>WhatsApp Anfrage</span>
                 </a>
 
                 <button
                   onClick={onOpenContact}
-                  className="p-2 text-stone-600 hover:text-stone-900 hover:bg-[#f3e7df] rounded-xl transition-colors cursor-pointer"
+                  className="p-2.5 text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors cursor-pointer"
                   title="Wunschtermin anfragen"
                 >
                   <ArrowRight className="w-4 h-4" />
@@ -202,16 +212,16 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-12 bg-[#f3e7df] border border-[#dfccbf] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="font-serif font-bold text-lg text-stone-900">Eigene Design-Idee von Instagram oder Pinterest?</h4>
-            <p className="text-sm text-stone-600">Bringen Sie einfach Ihr Wunschfoto mit. Kevin berät Sie direkt vor Ort zu Machbarkeit und Farbnuancen.</p>
+        <div className="mt-14 max-w-5xl mx-auto bg-[#12141c] border border-white/10 rounded-2xl p-7 sm:p-9 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
+          <div className="space-y-1.5 text-center sm:text-left">
+            <h4 className="font-display font-bold text-lg sm:text-xl text-white">Eigene Design-Idee von Instagram oder Pinterest?</h4>
+            <p className="text-sm text-slate-400">Senden Sie Kevin einfach Ihr Wunschfoto per WhatsApp. Er berät Sie sofort zu Machbarkeit, Nuancen und Dauer.</p>
           </div>
           <a
             href="https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20habe%20ein%20Foto%20von%20meinem%20Wunsch-Design%20und%20m%C3%B6chte%20einen%20Termin%20anfragen."
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-stone-900 hover:bg-stone-800 text-stone-50 font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shrink-0 shadow-sm transition-all"
+            className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-extrabold text-xs uppercase tracking-wider py-4 px-7 rounded-xl shrink-0 shadow-lg transition-all"
           >
             Design-Foto per WhatsApp senden
           </a>

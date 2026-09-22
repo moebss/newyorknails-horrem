@@ -1,4 +1,4 @@
-import { Star, CheckCircle, Quote } from 'lucide-react';
+import { Star, CheckCircle, Quote, Sparkles } from 'lucide-react';
 
 export default function GoogleReviews() {
   const reviews = [
@@ -26,25 +26,25 @@ export default function GoogleReviews() {
   ];
 
   return (
-    <section id="bewertungen" className="py-16 sm:py-20 bg-[#faf7f4] border-b border-[#ebdcd2]">
+    <section id="bewertungen" className="py-20 sm:py-24 bg-[#0e1017] text-slate-100 border-b border-white/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 bg-[#f3e7df] border border-[#dfccbf] px-4 py-1.5 rounded-full shadow-xs mb-3">
-            <div className="flex items-center gap-1 text-[#d97706]">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 bg-[#c5a059]/10 border border-[#c5a059]/30 px-4 py-1.5 rounded-full shadow-lg mb-4">
+            <div className="flex items-center gap-1 text-[#c5a059]">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-[#d97706] text-[#d97706]" />
+                <Star key={i} className="w-3.5 h-3.5 fill-[#c5a059] text-[#c5a059]" />
               ))}
             </div>
-            <span className="text-xs font-bold text-stone-800 tracking-wider uppercase">
+            <span className="text-xs font-bold text-slate-200 tracking-wider uppercase">
               Google & Fresha 4.8 von 5 Sternen
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-stone-900 tracking-tight mb-4">
-            Was unsere Kundinnen sagen
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Echte Stimmen aus <span className="text-[#c5a059]">Kerpen-Horrem</span>
           </h2>
-          <p className="text-stone-600 text-base leading-relaxed">
-            Über 77 echte Bewertungen sprechen für sich: Höchste Qualität, beste Haltbarkeit und herzlicher Service im Herzen von Horrem.
+          <p className="text-slate-400 text-base leading-relaxed">
+            Über 77 verifizierte Bewertungen bestätigen unsere Leidenschaft für kompromisslose Haltbarkeit, saubere Fräsertechnik und herzlichen Service.
           </p>
         </div>
 
@@ -52,30 +52,30 @@ export default function GoogleReviews() {
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#ebdcd2] rounded-2xl p-6 sm:p-7 shadow-xs flex flex-col justify-between"
+              className="bg-[#141722] border border-white/10 hover:border-[#c5a059]/50 rounded-2xl p-7 shadow-xl flex flex-col justify-between transition-all duration-300"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-[#d97706]">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-1 text-[#c5a059]">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#d97706] text-[#d97706]" />
+                      <Star key={i} className="w-4 h-4 fill-[#c5a059] text-[#c5a059]" />
                     ))}
                   </div>
-                  <span className="text-[11px] text-stone-400 font-medium">{rev.date}</span>
+                  <span className="text-[11px] font-mono text-slate-400">{rev.date}</span>
                 </div>
 
-                <p className="text-stone-700 text-sm leading-relaxed mb-6 italic">
+                <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">
                   "{rev.text}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#f5ede7] flex items-center justify-between">
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                 <div>
-                  <span className="font-serif font-bold text-stone-900 text-sm block leading-tight">{rev.author}</span>
-                  <span className="text-xs text-stone-500 block mt-0.5">{rev.location}</span>
+                  <span className="font-display font-bold text-white text-sm block leading-tight">{rev.author}</span>
+                  <span className="text-xs text-slate-400 block mt-0.5">{rev.location}</span>
                 </div>
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#2d6a4f] bg-[#d8f3dc] px-2.5 py-1 rounded-full">
-                  <CheckCircle className="w-3 h-3 text-[#2d6a4f]" />
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-full">
+                  <CheckCircle className="w-3 h-3 text-emerald-400" />
                   <span>Verifiziert</span>
                 </span>
               </div>

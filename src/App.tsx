@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustStrip from './components/TrustStrip';
 import ServicePrices from './components/ServicePrices';
-import BeforeAfterSlider from './components/BeforeAfterSlider';
+import NYCExperience from './components/NYCExperience';
 import CostEstimator from './components/CostEstimator';
 import InstagramFeed from './components/InstagramFeed';
 import GoogleReviews from './components/GoogleReviews';
@@ -25,13 +25,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf7f4] text-stone-800 flex flex-col font-sans selection:bg-[#dfb19b] selection:text-stone-900 pb-16 sm:pb-0 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0b0c10] text-slate-100 flex flex-col font-sans selection:bg-[#c5a059] selection:text-[#0b0c10] pb-16 sm:pb-0 overflow-x-hidden">
       <Navbar onOpenContact={scrollToContact} />
       <main className="flex-grow">
         <Hero onOpenContact={scrollToContact} />
         <TrustStrip />
         <ServicePrices onOpenContact={scrollToContact} />
-        <BeforeAfterSlider />
+        <NYCExperience />
         <CostEstimator onOpenContact={scrollToContact} />
         <InstagramFeed />
         <GoogleReviews />
