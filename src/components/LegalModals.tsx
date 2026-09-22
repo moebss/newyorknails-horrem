@@ -26,7 +26,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
   if (!type) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 animate-in fade-in duration-200 font-sans">
       <div 
         className="absolute inset-0 bg-black/80 backdrop-blur-md" 
         onClick={onClose}
@@ -53,7 +53,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
         <div className="p-6 sm:p-8 overflow-y-auto overscroll-contain text-slate-300 text-sm leading-relaxed space-y-4">
           {type === 'impressum' ? (
             <>
-              <h3 className="font-display font-bold text-white text-lg">Angaben gemäß § 5 DDG</h3>
+              <h3 className="font-display font-semibold text-white text-lg">Angaben gemäß § 5 DDG</h3>
               <p>
                 <strong>New York Nails Horrem</strong><br />
                 Inhaber: Kevin<br />
@@ -62,42 +62,42 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
                 Deutschland
               </p>
 
-              <h4 className="font-display font-bold text-white text-base pt-2">Kontakt</h4>
+              <h4 className="font-display font-semibold text-white text-base pt-2">Kontakt</h4>
               <p>
                 Telefon: 02273 / 9919337<br />
                 Mobil / WhatsApp: 0176 80211120<br />
                 E-Mail: kontakt@newyorknails-horrem.de
               </p>
 
-              <h4 className="font-display font-bold text-white text-base pt-2">Gewerbeanmeldung</h4>
+              <h4 className="font-display font-semibold text-white text-base pt-2">Gewerbeanmeldung</h4>
               <p>
                 Gewerbeanmeldung nach § 14 GewO erteilt durch die Stadt Kerpen.
               </p>
 
-              <h4 className="font-display font-bold text-white text-base pt-2">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h4>
+              <h4 className="font-display font-semibold text-white text-base pt-2">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h4>
               <p>
                 Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
               </p>
             </>
           ) : (
             <>
-              <h3 className="font-display font-bold text-white text-lg">Datenschutzerklärung</h3>
+              <h3 className="font-display font-semibold text-white text-lg">Datenschutzerklärung</h3>
               <p>
                 Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO).
               </p>
 
-              <h4 className="font-display font-bold text-white text-base pt-2">1. Verantwortliche Stelle</h4>
+              <h4 className="font-display font-semibold text-white text-base pt-2">1. Verantwortliche Stelle</h4>
               <p>
                 New York Nails Horrem, Hauptstraße 177–179, 50169 Kerpen-Horrem.<br />
                 Telefon: 02273 / 9919337 • E-Mail: kontakt@newyorknails-horrem.de
               </p>
 
-              <h4 className="font-display font-bold text-white text-base pt-2">2. Datenerfassung auf dieser Website</h4>
+              <h4 className="font-display font-semibold text-white text-base pt-2">2. Datenerfassung auf dieser Website</h4>
               <p>
                 Diese Website setzt keine invasiven Tracking-Cookies oder Werbe-Pixel ein. Wenn Sie uns per WhatsApp oder Telefon kontaktieren, werden Ihre übermittelten Kontaktdaten ausschließlich für die Bearbeitung Ihrer Terminanfrage gespeichert und verarbeitet.
               </p>
 
-              <h4 className="font-display font-bold text-white text-base pt-2">3. Ihre Rechte</h4>
+              <h4 className="font-display font-semibold text-white text-base pt-2">3. Ihre Rechte</h4>
               <p>
                 Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten.
               </p>

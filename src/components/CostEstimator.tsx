@@ -47,24 +47,24 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-semibold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
             <Calculator className="w-3.5 h-3.5" />
             <span>Manhattan Atelier Konfigurator</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Kalkulieren Sie Ihren <span className="text-[#c5a059]">Signature Look</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal mb-4">
+            Kalkulieren Sie Ihren <span className="italic text-[#c5a059]">Signature Look</span>
           </h2>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="font-sans text-slate-300 text-base leading-relaxed">
             Wählen Sie Basis, Veredelung und Nail-Art für eine sofortige transparente Kosteneinschätzung vor Ihrem Besuch.
           </p>
         </div>
 
-        <div className="bg-[#12141c] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="bg-[#12141c] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden font-sans">
           <div className="space-y-8">
             
             {/* 1. Step: Treatment */}
             <div>
-              <label className="font-display font-bold text-white text-base block mb-3">
+              <label className="font-display text-white text-base block mb-3 font-semibold">
                 1. Basis-Behandlung wählen:
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -84,9 +84,9 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
                         : 'border-white/10 bg-[#161924] hover:border-white/30 text-slate-300'
                     }`}
                   >
-                    <span className="font-bold text-xs text-white block">{item.label}</span>
+                    <span className="font-semibold text-xs text-white block">{item.label}</span>
                     <span className="text-[11px] text-slate-400 block mt-0.5">{item.sub}</span>
-                    <span className="text-xs text-[#c5a059] font-mono font-bold mt-2 block">{item.price}</span>
+                    <span className="text-xs text-[#c5a059] font-bold mt-2 block">{item.price}</span>
                   </button>
                 ))}
               </div>
@@ -94,7 +94,7 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
 
             {/* 2. Step: Style / Finish */}
             <div>
-              <label className="font-display font-bold text-white text-base block mb-3">
+              <label className="font-display text-white text-base block mb-3 font-semibold">
                 2. Finish & Trend-Effekt wählen:
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -114,8 +114,8 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
                         : 'border-white/10 bg-[#161924] hover:border-white/30 text-slate-300'
                     }`}
                   >
-                    <span className="font-bold text-xs text-white block">{item.label}</span>
-                    <span className="text-xs text-[#c5a059] font-mono font-medium mt-1 block">{item.price}</span>
+                    <span className="font-semibold text-xs text-white block">{item.label}</span>
+                    <span className="text-xs text-[#c5a059] font-medium mt-1 block">{item.price}</span>
                   </button>
                 ))}
               </div>
@@ -124,10 +124,10 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
             {/* 3. Step: Nail Art Count */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="font-display font-bold text-white text-base">
+                <label className="font-display text-white text-base font-semibold">
                   3. Handgemalte Nail-Art / Schmucksteine:
                 </label>
-                <span className="font-mono font-bold text-xs text-[#c5a059] bg-[#c5a059]/10 px-3 py-1 rounded-full border border-[#c5a059]/30">
+                <span className="font-bold text-xs text-[#c5a059] bg-[#c5a059]/10 px-3 py-1 rounded-full border border-[#c5a059]/30">
                   {nailArtCount} Akzent-Nägel (+{(nailArtCount * 2.5).toFixed(0)} €)
                 </span>
               </div>
@@ -140,7 +140,7 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
                 onChange={(e) => setNailArtCount(Number(e.target.value))}
                 className="w-full accent-[#c5a059] cursor-pointer bg-white/10 h-2 rounded-lg"
               />
-              <div className="flex justify-between text-[11px] text-slate-400 mt-2 font-mono">
+              <div className="flex justify-between text-[11px] text-slate-400 mt-2">
                 <span>0 Nägel (Pur)</span>
                 <span>2 Akzente</span>
                 <span>4 Nägel</span>
@@ -155,7 +155,7 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
             <div>
               <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Geschätzter Gesamtpreis:</span>
               <div className="flex items-baseline gap-2 mt-1">
-                <span className="font-mono font-extrabold text-4xl text-[#c5a059]">ca. {total} €</span>
+                <span className="font-display font-bold text-4xl text-[#c5a059]">ca. {total} €</span>
                 <span className="text-xs text-slate-400 font-normal">inkl. Cuticle Care & Versiegelung</span>
               </div>
             </div>
@@ -173,7 +173,7 @@ Wann hättest du den nächsten freien Termin für mich im Horrem Atelier?`;
 
               <button
                 onClick={onOpenContact}
-                className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-extrabold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>Termin anfragen</span>
                 <ArrowRight className="w-3.5 h-3.5" />

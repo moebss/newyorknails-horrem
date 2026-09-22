@@ -29,7 +29,7 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
       },
       {
         name: "Madison Avenue Refill",
-        subtitle: "Auffüllen Gel / Acryl nach 3-4 Wochen",
+        subtitle: "Auffüllen Gel / Acryl nach 3–4 Wochen",
         price: "ab 32 €",
         duration: "ca. 45–50 Min.",
         desc: "Sanftes Abtragen des Altmaterials, Erneuerung der Statik, Fräser-Cuticle-Care und frisches Farb- oder Gloss-Finish.",
@@ -106,14 +106,14 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-semibold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Manhattan Atelier Menu</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Behandlungen & <span className="text-[#c5a059]">Preise</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal mb-4">
+            Behandlungen & <span className="italic text-[#c5a059]">Preise</span>
           </h2>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="font-sans text-slate-300 text-base leading-relaxed">
             Transparente Festpreise ohne versteckte Aufschläge. Höchste Handwerkskunst, erstklassige Premium-Marken und meisterhafte Haltbarkeit.
           </p>
 
@@ -121,7 +121,7 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
           <div className="flex items-center justify-center gap-2 mt-8 p-1.5 bg-[#12141c] rounded-2xl max-w-md mx-auto border border-white/10 shadow-lg">
             <button
               onClick={() => setActiveTab('modellage')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-sans font-semibold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'modellage'
                   ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -131,7 +131,7 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
             </button>
             <button
               onClick={() => setActiveTab('pflege')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-sans font-semibold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'pflege'
                   ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -141,7 +141,7 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
             </button>
             <button
               onClick={() => setActiveTab('extras')}
-              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-sans font-semibold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'extras'
                   ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
                   : 'text-slate-400 hover:text-white'
@@ -157,12 +157,12 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
           {categories[activeTab].map((item, idx) => (
             <div
               key={idx}
-              className={`relative bg-[#141722] border rounded-2xl p-7 shadow-xl flex flex-col justify-between transition-all duration-300 hover:border-[#c5a059]/60 hover:bg-[#181d2b] ${
+              className={`relative bg-[#141722] border rounded-2xl p-7 sm:p-8 shadow-xl flex flex-col justify-between transition-all duration-300 hover:border-[#c5a059]/60 hover:bg-[#181d2b] ${
                 item.popular ? 'border-[#c5a059]/40 ring-1 ring-[#c5a059]/20' : 'border-white/10'
               }`}
             >
               {item.popular && (
-                <span className="absolute -top-3 right-6 bg-[#c5a059] text-[#0b0c10] text-[10px] font-extrabold tracking-widest uppercase py-1 px-3 rounded-full shadow-md">
+                <span className="absolute -top-3 right-6 bg-[#c5a059] text-[#0b0c10] text-[10px] font-sans font-bold tracking-widest uppercase py-1 px-3 rounded-full shadow-md">
                   Signature Look
                 </span>
               )}
@@ -170,15 +170,15 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
               <div>
                 <div className="flex items-start justify-between gap-4 mb-1">
                   <div>
-                    <h3 className="font-display font-bold text-xl text-white leading-snug">{item.name}</h3>
-                    <span className="text-xs font-medium text-[#c5a059] block mt-0.5">{item.subtitle}</span>
+                    <h3 className="font-display font-semibold text-xl sm:text-2xl text-white leading-snug">{item.name}</h3>
+                    <span className="text-xs font-sans font-medium text-[#c5a059] block mt-1">{item.subtitle}</span>
                   </div>
-                  <span className="font-mono font-bold text-2xl text-[#c5a059] shrink-0">{item.price}</span>
+                  <span className="font-sans font-bold text-2xl text-[#c5a059] shrink-0">{item.price}</span>
                 </div>
-                <span className="text-[11px] font-mono text-slate-400 block mb-4">{item.duration}</span>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">{item.desc}</p>
+                <span className="text-xs font-sans text-slate-400 block mb-4 mt-1">{item.duration}</span>
+                <p className="font-sans text-slate-300 text-sm leading-relaxed mb-6">{item.desc}</p>
 
-                <ul className="space-y-2.5 mb-6 border-t border-white/10 pt-4">
+                <ul className="space-y-2.5 mb-6 border-t border-white/10 pt-4 font-sans">
                   {item.highlights.map((h, i) => (
                     <li key={i} className="flex items-center gap-2.5 text-xs text-slate-300">
                       <Check className="w-4 h-4 text-[#c5a059] shrink-0" />
@@ -193,7 +193,7 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
                   href={`https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20h%C3%A4tte%20Interesse%20an:%20${encodeURIComponent(item.name)}%20(${item.price})`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 text-xs font-bold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-500/30 py-2.5 px-4 rounded-xl transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-2 text-xs font-sans font-bold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-500/30 py-2.5 px-4 rounded-xl transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 text-emerald-400" />
                   <span>WhatsApp Anfrage</span>
@@ -213,15 +213,15 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
 
         {/* Bottom Banner */}
         <div className="mt-14 max-w-5xl mx-auto bg-[#12141c] border border-white/10 rounded-2xl p-7 sm:p-9 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-1.5 text-center sm:text-left">
-            <h4 className="font-display font-bold text-lg sm:text-xl text-white">Eigene Design-Idee von Instagram oder Pinterest?</h4>
-            <p className="text-sm text-slate-400">Senden Sie Kevin einfach Ihr Wunschfoto per WhatsApp. Er berät Sie sofort zu Machbarkeit, Nuancen und Dauer.</p>
+          <div className="space-y-1.5 text-center sm:text-left font-sans">
+            <h4 className="font-display font-semibold text-lg sm:text-xl text-white">Eigene Design-Idee von Instagram oder Pinterest?</h4>
+            <p className="text-sm text-slate-300">Senden Sie Kevin einfach Ihr Wunschfoto per WhatsApp. Er berät Sie sofort zu Machbarkeit, Nuancen und Dauer.</p>
           </div>
           <a
             href="https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20habe%20ein%20Foto%20von%20meinem%20Wunsch-Design%20und%20m%C3%B6chte%20einen%20Termin%20anfragen."
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-extrabold text-xs uppercase tracking-wider py-4 px-7 rounded-xl shrink-0 shadow-lg transition-all"
+            className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-sans font-bold text-xs uppercase tracking-wider py-4 px-7 rounded-xl shrink-0 shadow-lg transition-all"
           >
             Design-Foto per WhatsApp senden
           </a>

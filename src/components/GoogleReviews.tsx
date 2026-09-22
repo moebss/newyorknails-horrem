@@ -36,23 +36,23 @@ export default function GoogleReviews() {
                 <Star key={i} className="w-3.5 h-3.5 fill-[#c5a059] text-[#c5a059]" />
               ))}
             </div>
-            <span className="text-xs font-bold text-slate-200 tracking-wider uppercase">
+            <span className="text-xs font-sans font-semibold text-slate-200 tracking-wider uppercase">
               Google & Fresha 4.8 von 5 Sternen
             </span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Echte Stimmen aus <span className="text-[#c5a059]">Kerpen-Horrem</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal mb-4">
+            Echte Stimmen aus <span className="italic text-[#c5a059]">Kerpen-Horrem</span>
           </h2>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="font-sans text-slate-300 text-base leading-relaxed">
             Über 77 verifizierte Bewertungen bestätigen unsere Leidenschaft für kompromisslose Haltbarkeit, saubere Fräsertechnik und herzlichen Service.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-[#141722] border border-white/10 hover:border-[#c5a059]/50 rounded-2xl p-7 shadow-xl flex flex-col justify-between transition-all duration-300"
+              className="bg-[#141722] border border-white/10 hover:border-[#c5a059]/50 rounded-2xl p-7 sm:p-8 shadow-xl flex flex-col justify-between transition-all duration-300"
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
@@ -61,7 +61,7 @@ export default function GoogleReviews() {
                       <Star key={i} className="w-4 h-4 fill-[#c5a059] text-[#c5a059]" />
                     ))}
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400">{rev.date}</span>
+                  <span className="text-xs text-slate-400">{rev.date}</span>
                 </div>
 
                 <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">
@@ -71,7 +71,7 @@ export default function GoogleReviews() {
 
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                 <div>
-                  <span className="font-display font-bold text-white text-sm block leading-tight">{rev.author}</span>
+                  <span className="font-display font-semibold text-white text-base block leading-tight">{rev.author}</span>
                   <span className="text-xs text-slate-400 block mt-0.5">{rev.location}</span>
                 </div>
                 <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-full">

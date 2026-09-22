@@ -32,14 +32,14 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-semibold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Häufige Fragen</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Fragen & <span className="text-[#c5a059]">Antworten</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal mb-4">
+            Fragen & <span className="italic text-[#c5a059]">Antworten</span>
           </h2>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="font-sans text-slate-300 text-base leading-relaxed">
             Alles Wichtige rund um Ihren Besuch bei New York Nails Horrem auf einen Blick.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function FAQ() {
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-white/5 transition-colors"
                 >
-                  <span className="font-display font-bold text-white text-base sm:text-lg">
+                  <span className="font-display font-medium text-white text-base sm:text-lg">
                     {f.q}
                   </span>
                   <div className={`w-8 h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#c5a059] shrink-0 transition-transform ${isOpen ? 'rotate-180 bg-[#c5a059] text-[#0b0c10]' : ''}`}>
@@ -66,7 +66,7 @@ export default function FAQ() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4">
+                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-sans text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4">
                     {f.a}
                   </div>
                 )}

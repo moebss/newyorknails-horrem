@@ -6,16 +6,16 @@ interface FooterProps {
 
 export default function Footer({ onOpenLegal }: FooterProps) {
   return (
-    <footer className="bg-[#07080a] text-slate-300 py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <footer className="bg-[#07080a] text-slate-300 py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10 font-sans">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
         
         {/* Studio Info */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059]">
               <Sparkles className="w-4 h-4" />
             </div>
-            <span className="font-display font-extrabold text-xl text-white">NEW YORK NAILS</span>
+            <span className="font-display font-bold text-xl text-white">New York Nails</span>
           </div>
           <p className="text-slate-400 text-xs leading-relaxed">
             Ihr exklusives Manhattan Nail Studio & Behandlungs-Atelier für langlebige Neumodellage, Russian Cuticle Care, Chrome Trends und Pediküre in Kerpen-Horrem.
@@ -35,7 +35,7 @@ export default function Footer({ onOpenLegal }: FooterProps) {
 
         {/* Quick Links */}
         <div>
-          <span className="font-display font-bold text-white text-sm block mb-4 uppercase tracking-wider">Navigation</span>
+          <span className="font-display font-semibold text-white text-sm block mb-4 uppercase tracking-wider">Navigation</span>
           <ul className="space-y-2.5 text-xs text-slate-400">
             <li><a href="#preise" className="hover:text-[#c5a059] transition-colors">Behandlungen & Preise</a></li>
             <li><a href="#experience" className="hover:text-[#c5a059] transition-colors">NYC Ritual & Standards</a></li>
@@ -48,7 +48,7 @@ export default function Footer({ onOpenLegal }: FooterProps) {
 
         {/* Contact Info */}
         <div>
-          <span className="font-display font-bold text-white text-sm block mb-4 uppercase tracking-wider">Kontakt</span>
+          <span className="font-display font-semibold text-white text-sm block mb-4 uppercase tracking-wider">Kontakt</span>
           <ul className="space-y-3 text-xs text-slate-400">
             <li className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-[#c5a059] shrink-0 mt-0.5" />
@@ -67,15 +67,15 @@ export default function Footer({ onOpenLegal }: FooterProps) {
 
         {/* Hours */}
         <div>
-          <span className="font-display font-bold text-white text-sm block mb-4 uppercase tracking-wider">Öffnungszeiten</span>
-          <ul className="space-y-2 text-xs text-slate-400 font-mono">
+          <span className="font-display font-semibold text-white text-sm block mb-4 uppercase tracking-wider">Öffnungszeiten</span>
+          <ul className="space-y-2 text-xs text-slate-400">
             <li className="flex justify-between">
               <span>Mo – Fr:</span>
-              <span className="text-white font-semibold">09:30 – 19:00</span>
+              <span className="text-white font-medium">09:30 – 19:00</span>
             </li>
             <li className="flex justify-between">
               <span>Samstag:</span>
-              <span className="text-white font-semibold">09:30 – 17:00</span>
+              <span className="text-white font-medium">09:30 – 17:00</span>
             </li>
             <li className="flex justify-between">
               <span>Sonntag:</span>

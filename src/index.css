@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Syne', sans-serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-gold: #c5a059;
   --color-gold-hover: #dfb76c;
   --color-gold-glow: rgba(197, 160, 89, 0.15);
@@ -16,11 +16,12 @@
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: #0b0c10;
     color: #f1f5f9;
+    letter-spacing: 0;
   }
   
-  h1, h2, h3, h4, .font-display {
-    font-family: 'Syne', sans-serif;
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4, .font-display, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: normal;
   }
 }
 
