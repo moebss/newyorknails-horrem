@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Jost', sans-serif;
+  }
+  h1, h2, h3, .font-display, .font-serif {
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
