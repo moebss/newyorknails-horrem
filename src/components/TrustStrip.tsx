@@ -9,18 +9,18 @@ export default function TrustStrip() {
   ];
 
   return (
-    <div className="bg-[#0e1017] border-b border-white/10 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#ffffff] border-b border-stone-200/80 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {points.map((p, idx) => {
           const Icon = p.icon;
           return (
-            <div key={idx} className="flex items-center gap-4 bg-[#141722]/70 border border-white/5 p-4 rounded-xl">
-              <div className="w-10 h-10 rounded-xl bg-[#c5a059]/10 border border-[#c5a059]/30 flex items-center justify-center text-[#c5a059] shrink-0 shadow-sm">
+            <div key={idx} className="flex items-center gap-4 bg-[#faf9f6] border border-stone-200/60 p-4 rounded-xl shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-[#b88e38]/10 border border-[#b88e38]/30 flex items-center justify-center text-[#9b7428] shrink-0 shadow-xs">
                 <Icon className="w-5 h-5" />
               </div>
               <div>
-                <span className="font-sans font-semibold text-white text-sm block leading-tight">{p.title}</span>
-                <span className="text-xs font-sans text-slate-400 block mt-1">{p.desc}</span>
+                <span className="font-sans font-semibold text-stone-900 text-sm block leading-tight">{p.title}</span>
+                <span className="text-xs font-sans text-stone-500 block mt-1">{p.desc}</span>
               </div>
             </div>
           );

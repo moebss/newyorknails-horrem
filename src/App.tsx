@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import TrustStrip from './components/TrustStrip';
 import ServicePrices from './components/ServicePrices';
 import NYCExperience from './components/NYCExperience';
-import CostEstimator from './components/CostEstimator';
 import InstagramFeed from './components/InstagramFeed';
 import GoogleReviews from './components/GoogleReviews';
 import AboutUs from './components/AboutUs';
@@ -25,14 +24,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0c10] text-slate-100 flex flex-col font-sans selection:bg-[#c5a059] selection:text-[#0b0c10] pb-16 sm:pb-0 overflow-x-hidden">
+    <div className="min-h-screen bg-[#faf9f6] text-[#111318] flex flex-col font-sans selection:bg-[#b88e38] selection:text-white pb-16 sm:pb-0 overflow-x-hidden">
       <Navbar onOpenContact={scrollToContact} />
       <main className="flex-grow">
         <Hero onOpenContact={scrollToContact} />
         <TrustStrip />
         <ServicePrices onOpenContact={scrollToContact} />
         <NYCExperience />
-        <CostEstimator onOpenContact={scrollToContact} />
         <InstagramFeed />
         <GoogleReviews />
         <AboutUs onOpenContact={scrollToContact} />

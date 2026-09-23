@@ -61,23 +61,20 @@ export default function NYCExperience() {
   };
 
   return (
-    <section id="experience" className="py-24 bg-[#0e1017] text-slate-100 relative overflow-hidden border-y border-white/10">
-      {/* Ambient Gold Glow */}
-      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#c5a059]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -left-48 w-96 h-96 bg-[#c5a059]/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="experience" className="py-24 bg-[#fbfaf8] text-[#111318] relative overflow-hidden border-y border-stone-200/80">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#b88e38]/10 border border-[#b88e38]/30 text-[#9b7428] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The NYC Atelier Experience</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal mb-5 leading-tight">
-            Das 4-Stufen-Ritual für <span className="italic text-[#c5a059]">makellose Nägel</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111318] tracking-normal mb-5 leading-tight">
+            Das 4-Stufen-Ritual für <span className="italic text-[#b88e38]">makellose Nägel</span>
           </h2>
-          <p className="font-sans text-slate-300 text-base sm:text-lg leading-relaxed">
+          <p className="font-sans text-stone-600 text-base sm:text-lg leading-relaxed">
             Keine Massenabfertigung, kein Kompromiss. Im New York Nails Atelier in Kerpen-Horrem durchlaufen Ihre Nägel einen präzisen, meisterhaft abgestimmten Ablauf für höchste Eleganz und dauerhafte Belastbarkeit.
           </p>
         </div>
@@ -87,67 +84,67 @@ export default function NYCExperience() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="group relative bg-[#141722]/80 hover:bg-[#1a1f2e] border border-white/10 hover:border-[#c5a059]/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between shadow-xl"
+              className="group relative bg-white hover:bg-[#ffffff] border border-stone-200 hover:border-[#b88e38]/50 rounded-2xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-lg"
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <span className="text-3xl font-display font-bold text-[#c5a059]/40 group-hover:text-[#c5a059] transition-colors">
+                  <span className="text-3xl font-display font-bold text-[#b88e38]/40 group-hover:text-[#9b7428] transition-colors">
                     {step.num}
                   </span>
-                  <span className="text-[11px] font-sans font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/5 text-slate-300 border border-white/10">
+                  <span className="text-[11px] font-sans font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-[#b88e38]/10 text-[#9b7428] border border-[#b88e38]/20">
                     {step.badge}
                   </span>
                 </div>
                 
-                <h3 className="font-display text-xl font-semibold text-white mb-2 group-hover:text-[#dfb76c] transition-colors leading-snug">
+                <h3 className="font-display text-xl font-semibold text-[#111318] mb-2 group-hover:text-[#9b7428] transition-colors leading-snug">
                   {step.title}
                 </h3>
-                <p className="text-xs font-sans font-medium text-[#c5a059] uppercase tracking-wider mb-3">
+                <p className="text-xs font-sans font-semibold text-[#b88e38] uppercase tracking-wider mb-3">
                   {step.subtitle}
                 </p>
-                <p className="text-slate-300 font-sans text-xs sm:text-sm leading-relaxed">
+                <p className="text-stone-600 font-sans text-xs sm:text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 group-hover:text-white transition-colors font-sans">
+              <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 group-hover:text-[#111318] transition-colors font-sans">
                 <span className="font-medium">Schritt {step.num} im Salon</span>
-                <CheckCircle2 className="w-4 h-4 text-[#c5a059]" />
+                <CheckCircle2 className="w-4 h-4 text-[#9b7428]" />
               </div>
             </div>
           ))}
         </div>
 
         {/* Quality Standard Bar */}
-        <div className="bg-[#12141c] border border-white/10 rounded-2xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="bg-white border border-stone-200 rounded-2xl p-8 sm:p-10 shadow-sm relative overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {standards.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div key={idx} className="flex flex-col items-start space-y-3 font-sans">
-                  <div className="w-12 h-12 rounded-xl bg-[#c5a059]/10 border border-[#c5a059]/25 flex items-center justify-center text-[#c5a059]">
+                  <div className="w-12 h-12 rounded-xl bg-[#b88e38]/10 border border-[#b88e38]/25 flex items-center justify-center text-[#9b7428]">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h4 className="text-white font-semibold text-base">{item.title}</h4>
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{item.text}</p>
+                  <h4 className="text-stone-900 font-semibold text-base">{item.title}</h4>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">{item.text}</p>
                 </div>
               );
             })}
           </div>
 
           {/* Direct CTA inside standards */}
-          <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans">
+          <div className="mt-10 pt-8 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans">
             <div>
-              <p className="text-white font-semibold text-sm sm:text-base">
+              <p className="text-stone-900 font-semibold text-sm sm:text-base">
                 Erleben Sie den New Yorker Standard persönlich in Kerpen-Horrem
               </p>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-stone-500 mt-0.5">
                 Hauptstraße 177–179 • Termine nach Vereinbarung oder spontan nach Verfügbarkeit
               </p>
             </div>
             <button
               onClick={() => handleWhatsAppBooking('NYC Ritual Beratung')}
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-[#c5a059]/20 cursor-pointer shrink-0"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#b88e38] hover:bg-[#9b7428] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg cursor-pointer shrink-0"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Termin bei Kevin anfragen</span>

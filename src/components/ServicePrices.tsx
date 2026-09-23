@@ -101,30 +101,30 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
   };
 
   return (
-    <section id="preise" className="py-20 sm:py-24 bg-[#0b0c10] text-slate-100 border-b border-white/10 relative">
+    <section id="preise" className="py-20 sm:py-24 bg-[#ffffff] text-[#111318] border-b border-stone-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#b88e38]/10 border border-[#b88e38]/30 text-[#9b7428] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Manhattan Atelier Menu</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal mb-4">
-            Behandlungen & <span className="italic text-[#c5a059]">Preise</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111318] tracking-normal mb-4">
+            Behandlungen & <span className="italic text-[#b88e38]">Preise</span>
           </h2>
-          <p className="font-sans text-slate-300 text-base leading-relaxed">
+          <p className="font-sans text-stone-600 text-base leading-relaxed">
             Transparente Festpreise ohne versteckte Aufschläge. Höchste Handwerkskunst, erstklassige Premium-Marken und meisterhafte Haltbarkeit.
           </p>
 
           {/* Category Tabs */}
-          <div className="flex items-center justify-center gap-2 mt-8 p-1.5 bg-[#12141c] rounded-2xl max-w-md mx-auto border border-white/10 shadow-lg">
+          <div className="flex items-center justify-center gap-2 mt-8 p-1.5 bg-stone-100 rounded-2xl max-w-md mx-auto border border-stone-200">
             <button
               onClick={() => setActiveTab('modellage')}
               className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-sans font-semibold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'modellage'
-                  ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-white text-stone-900 shadow-sm border border-stone-200'
+                  : 'text-stone-600 hover:text-black'
               }`}
             >
               Gel & Acryl
@@ -133,8 +133,8 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
               onClick={() => setActiveTab('pflege')}
               className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-sans font-semibold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'pflege'
-                  ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-white text-stone-900 shadow-sm border border-stone-200'
+                  : 'text-stone-600 hover:text-black'
               }`}
             >
               Shellac & Spa
@@ -143,8 +143,8 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
               onClick={() => setActiveTab('extras')}
               className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-sans font-semibold tracking-wider uppercase transition-all cursor-pointer ${
                 activeTab === 'extras'
-                  ? 'bg-[#c5a059] text-[#0b0c10] shadow-md'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-white text-stone-900 shadow-sm border border-stone-200'
+                  : 'text-stone-600 hover:text-black'
               }`}
             >
               Nail Art & Extras
@@ -157,12 +157,12 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
           {categories[activeTab].map((item, idx) => (
             <div
               key={idx}
-              className={`relative bg-[#141722] border rounded-2xl p-7 sm:p-8 shadow-xl flex flex-col justify-between transition-all duration-300 hover:border-[#c5a059]/60 hover:bg-[#181d2b] ${
-                item.popular ? 'border-[#c5a059]/40 ring-1 ring-[#c5a059]/20' : 'border-white/10'
+              className={`relative bg-[#faf9f6] border rounded-2xl p-7 sm:p-8 shadow-xs flex flex-col justify-between transition-all duration-300 hover:border-[#b88e38]/60 hover:shadow-md ${
+                item.popular ? 'border-[#b88e38]/50 ring-1 ring-[#b88e38]/20 bg-white' : 'border-stone-200'
               }`}
             >
               {item.popular && (
-                <span className="absolute -top-3 right-6 bg-[#c5a059] text-[#0b0c10] text-[10px] font-sans font-bold tracking-widest uppercase py-1 px-3 rounded-full shadow-md">
+                <span className="absolute -top-3 right-6 bg-[#b88e38] text-white text-[10px] font-sans font-bold tracking-widest uppercase py-1 px-3 rounded-full shadow-xs">
                   Signature Look
                 </span>
               )}
@@ -170,38 +170,38 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
               <div>
                 <div className="flex items-start justify-between gap-4 mb-1">
                   <div>
-                    <h3 className="font-display font-semibold text-xl sm:text-2xl text-white leading-snug">{item.name}</h3>
-                    <span className="text-xs font-sans font-medium text-[#c5a059] block mt-1">{item.subtitle}</span>
+                    <h3 className="font-display font-semibold text-xl sm:text-2xl text-[#111318] leading-snug">{item.name}</h3>
+                    <span className="text-xs font-sans font-medium text-[#9b7428] block mt-1">{item.subtitle}</span>
                   </div>
-                  <span className="font-sans font-bold text-2xl text-[#c5a059] shrink-0">{item.price}</span>
+                  <span className="font-sans font-bold text-2xl text-[#9b7428] shrink-0">{item.price}</span>
                 </div>
-                <span className="text-xs font-sans text-slate-400 block mb-4 mt-1">{item.duration}</span>
-                <p className="font-sans text-slate-300 text-sm leading-relaxed mb-6">{item.desc}</p>
+                <span className="text-xs font-sans text-stone-400 block mb-4 mt-1">{item.duration}</span>
+                <p className="font-sans text-stone-600 text-sm leading-relaxed mb-6">{item.desc}</p>
 
-                <ul className="space-y-2.5 mb-6 border-t border-white/10 pt-4 font-sans">
+                <ul className="space-y-2.5 mb-6 border-t border-stone-200/60 pt-4 font-sans">
                   {item.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-xs text-slate-300">
-                      <Check className="w-4 h-4 text-[#c5a059] shrink-0" />
+                    <li key={i} className="flex items-center gap-2.5 text-xs text-stone-700">
+                      <Check className="w-4 h-4 text-[#9b7428] shrink-0" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+              <div className="pt-4 border-t border-stone-200/60 flex items-center justify-between gap-3">
                 <a
                   href={`https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20h%C3%A4tte%20Interesse%20an:%20${encodeURIComponent(item.name)}%20(${item.price})`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 text-xs font-sans font-bold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-500/30 py-2.5 px-4 rounded-xl transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-2 text-xs font-sans font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 py-2.5 px-4 rounded-xl transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                  <MessageCircle className="w-4 h-4 text-emerald-700" />
                   <span>WhatsApp Anfrage</span>
                 </a>
 
                 <button
                   onClick={onOpenContact}
-                  className="p-2.5 text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors cursor-pointer"
+                  className="p-2.5 text-stone-600 hover:text-black bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-xl transition-colors cursor-pointer"
                   title="Wunschtermin anfragen"
                 >
                   <ArrowRight className="w-4 h-4" />
@@ -212,16 +212,16 @@ export default function ServicePrices({ onOpenContact }: ServicePricesProps) {
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-14 max-w-5xl mx-auto bg-[#12141c] border border-white/10 rounded-2xl p-7 sm:p-9 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="mt-14 max-w-5xl mx-auto bg-[#faf9f6] border border-stone-200 rounded-2xl p-7 sm:p-9 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1.5 text-center sm:text-left font-sans">
-            <h4 className="font-display font-semibold text-lg sm:text-xl text-white">Eigene Design-Idee von Instagram oder Pinterest?</h4>
-            <p className="text-sm text-slate-300">Senden Sie Kevin einfach Ihr Wunschfoto per WhatsApp. Er berät Sie sofort zu Machbarkeit, Nuancen und Dauer.</p>
+            <h4 className="font-display font-semibold text-lg sm:text-xl text-[#111318]">Eigene Design-Idee von Instagram oder Pinterest?</h4>
+            <p className="text-sm text-stone-600">Senden Sie Kevin einfach Ihr Wunschfoto per WhatsApp. Er berät Sie sofort zu Machbarkeit, Nuancen und Dauer.</p>
           </div>
           <a
             href="https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20habe%20ein%20Foto%20von%20meinem%20Wunsch-Design%20und%20m%C3%B6chte%20einen%20Termin%20anfragen."
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#c5a059] hover:bg-[#dfb76c] text-[#0b0c10] font-sans font-bold text-xs uppercase tracking-wider py-4 px-7 rounded-xl shrink-0 shadow-lg transition-all"
+            className="bg-[#b88e38] hover:bg-[#9b7428] text-white font-sans font-bold text-xs uppercase tracking-wider py-4 px-7 rounded-xl shrink-0 shadow-md hover:shadow-lg transition-all"
           >
             Design-Foto per WhatsApp senden
           </a>

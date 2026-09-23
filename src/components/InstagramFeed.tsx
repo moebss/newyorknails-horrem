@@ -17,19 +17,19 @@ export default function InstagramFeed() {
   ];
 
   return (
-    <section id="instagram" className="py-20 sm:py-24 bg-[#0b0c10] text-slate-100 border-b border-white/10 relative">
+    <section id="instagram" className="py-20 sm:py-24 bg-[#ffffff] text-[#111318] border-b border-stone-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#b88e38]/10 border border-[#b88e38]/30 text-[#9b7428] text-xs font-sans font-semibold uppercase tracking-widest mb-4">
               <Instagram className="w-3.5 h-3.5" />
               <span>@newyorknails_horrem</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal">
-              Das Manhattan Lookbook auf <span className="italic text-[#c5a059]">Instagram</span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111318] tracking-normal">
+              Das Manhattan Lookbook auf <span className="italic text-[#b88e38]">Instagram</span>
             </h2>
-            <p className="font-sans text-slate-300 text-base mt-3 max-w-xl">
+            <p className="font-sans text-stone-600 text-base mt-3 max-w-xl">
               Entdecken Sie täglich neue Modellagen, Farbkreationen und virale Trends direkt aus Kevins Atelier in Kerpen-Horrem.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function InstagramFeed() {
               href="https://www.instagram.com/newyorknails_horrem/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-90 text-white font-sans font-semibold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl shadow-lg transition-all"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-90 text-white font-sans font-semibold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl shadow-md transition-all"
             >
               <Instagram className="w-4 h-4" />
               <span>Auf Instagram folgen</span>
@@ -56,17 +56,17 @@ export default function InstagramFeed() {
               href="https://www.instagram.com/newyorknails_horrem/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square rounded-2xl overflow-hidden shadow-xl border border-white/10 bg-[#141722] block"
+              className="group relative aspect-square rounded-2xl overflow-hidden shadow-xs border border-stone-200 bg-stone-100 block"
             >
               <img
                 src={post.img}
                 alt={`New York Nails Look - ${post.tag}`}
                 className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center text-white font-sans">
-                <Heart className="w-5 h-5 fill-[#c5a059] text-[#c5a059] mb-1.5" />
+              <div className="absolute inset-0 bg-stone-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center text-white font-sans">
+                <Heart className="w-5 h-5 fill-[#b88e38] text-[#b88e38] mb-1.5" />
                 <span className="text-xs font-bold text-white">{post.likes} Likes</span>
-                <span className="text-[11px] text-[#c5a059] font-medium mt-1 line-clamp-1">{post.tag}</span>
+                <span className="text-[11px] text-stone-200 font-medium mt-1 line-clamp-1">{post.tag}</span>
               </div>
             </a>
           ))}
@@ -74,13 +74,13 @@ export default function InstagramFeed() {
 
         {/* Instagram Inspiration Note */}
         <div className="mt-10 text-center font-sans">
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-stone-500">
             Haben Sie ein Bild auf Instagram oder TikTok gesehen?{' '}
             <a
               href="https://wa.me/4917680211120?text=Hallo%20Kevin!%20Ich%20habe%20ein%20Inspo-Foto%20von%20Instagram%20und%20m%C3%B6chte%20fragen%20ob%20wir%20das%20umsetzen%20k%C3%B6nnen."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#c5a059] hover:underline font-semibold"
+              className="text-[#9b7428] hover:underline font-semibold"
             >
               Foto direkt per WhatsApp an Kevin senden
             </a>
